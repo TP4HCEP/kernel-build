@@ -7,12 +7,12 @@ SHELL ["bash", "-c"]
 RUN apt-get update && \
       apt-get -y install sudo
 
-RUN useradd -m kernelb && echo "kernelb:kernelb" | chpasswd && adduser kernelb sudo
+RUN useradd -m TP4HCEP && echo "TP4HCEP:TP4HCEP" | chpasswd && adduser TP4HCEP sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-USER kernelb
+USER TP4HCEP
 
-WORKDIR /home/kernelb
+WORKDIR /home/TP4HCEP
 
 RUN sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y \
     curl \
@@ -35,7 +35,7 @@ RUN sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y \
 
 
 # Setup git config
-ARG GIT_NAME="KernelB"
+ARG GIT_NAME="TP4HCEP"
 ENV GIT_NAME=${GIT_NAME}
 ARG GIT_EMAIL="tpahc3p@gmail.com"
 ENV GIT_EMAIL=${GIT_EMAIL}
