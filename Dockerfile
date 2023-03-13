@@ -37,7 +37,7 @@ RUN sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y \
 # Setup git config
 ARG GIT_NAME="KernelB"
 ENV GIT_NAME=${GIT_NAME}
-ARG GIT_EMAIL="20230226+kernelb@users.noreply.github.com"
+ARG GIT_EMAIL="tpahc3p@gmail.com"
 ENV GIT_EMAIL=${GIT_EMAIL}
 RUN git config --global user.name "${GIT_NAME}"
 RUN git config --global user.email "${GIT_EMAIL}"
